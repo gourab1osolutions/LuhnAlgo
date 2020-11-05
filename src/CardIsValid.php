@@ -10,8 +10,8 @@ class CardIsValid
      */
     public function isValidCard(string $cardNumber): bool
     {
-           $sum = 0;
-           $double = false;
+        $sum = 0;
+        $double = false;
         for ($j = strlen($cardNumber) - 1; $j >= 0; $j--) {
             $temp = $cardNumber[$j];
             if ($double === true) {
@@ -26,4 +26,3 @@ class CardIsValid
         return $sum % 10 == 0;
     }
 }
-
