@@ -1,0 +1,21 @@
+{
+    "name": "developer/luhn",
+    "description": "luhn algorithm",
+    "authors": [
+        {
+            "name": "Gourab Batabyal",
+            "email": "gourab@1osolutions.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Demo\\": "src/"
+        }
+    },
+    "require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.3"
+    }
+}
