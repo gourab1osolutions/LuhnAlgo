@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":309:{a:2:{s:7:"defects";a:2:{s:40:"Luhn\CardIsValidTest::testcardValidation";i:4;s:40:"Luhn\CardIsValidTest::testValidateNumber";i:4;}s:5:"times";a:3:{s:40:"Luhn\CardIsValidTest::testcardValidation";d:0.003;s:40:"Luhn\CardIsValidTest::testValidateNumber";d:0.009;s:33:"Luhn\LuhnTest::testcardGeneration";d:0.001;}}}

@@ -9,7 +9,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Demo\\": "src/"
+            "Luhn\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Luhn\\Test\\" :"tests/"
         }
     },
     "require": {

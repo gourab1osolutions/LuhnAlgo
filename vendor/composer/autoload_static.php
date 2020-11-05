@@ -30,10 +30,14 @@ class ComposerStaticInit1155d8bb5669f09e2514103caf11f78f
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
         ),
+        'L' => 
+        array (
+            'Luhn\\Test\\' => 10,
+            'Luhn\\' => 5,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
-            'Demo\\' => 5,
             'DeepCopy\\' => 9,
         ),
     );
@@ -61,13 +65,17 @@ class ComposerStaticInit1155d8bb5669f09e2514103caf11f78f
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Luhn\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Luhn\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
-        ),
-        'Demo\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'DeepCopy\\' => 
         array (
