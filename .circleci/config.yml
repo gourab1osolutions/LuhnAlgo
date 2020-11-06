@@ -1,0 +1,49 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4.7-fpm
+
+    steps:
+      - checkout
+
+      - run: sudo apt update && sudo apt upgrade # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
+      - run: sudo apt install libonig-dev
+      - run: sudo docker-php-ext-install zip
+      - run: sudo docker-php-ext-install intl
+      - run: sudo docker-php-ext-install mbstring
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # "composer.lock" can be used if it is committed to the repo
+            - v1-dependencies-{{ checksum "composer.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: composer install -n --prefer-dist
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
+      # create code coverage reports folder
+      - run: mkdir -p ~/phpunit
+      - run: mkdir -p ~/phpunit/coverage
+
+      # run tests with phpunit
+      - run: ./vendor/bin/phpunit --coverage-clover ~/phpunit/coverage/clover.xml
+
+      - store_test_results:
+          path: ~/phpunit
+
+      - store_artifacts:
+          path: ~/phpunit/coverage
+
+      - run: bash <(curl -s https://codecov.io/bash) -f ~/phpunit/coverage/clover.xml
+
+
